@@ -176,7 +176,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2025-11-16 15:49:04 / Modified: 19:42:10" itemprop="dateCreated datePublished" datetime="2025-11-16T15:49:04+08:00">2025-11-16</time>
+              <time title="Created: 2025-11-16 15:49:04 / Modified: 20:53:41" itemprop="dateCreated datePublished" datetime="2025-11-16T15:49:04+08:00">2025-11-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -203,11 +203,12 @@
 <p>半导体能带在半导体和金属接触时，表面处发生弯曲，这种现象称为“能带弯曲”。</p>
 <p>其中有两种接触方式：<strong>肖特基接触</strong> 和 <strong>欧姆接触</strong></p>
 <h3 id="对于我们所研究的-rm-Au-TiO-2-体系，金属和n型半导体的接触，就属于肖特基接触"><a href="#对于我们所研究的-rm-Au-TiO-2-体系，金属和n型半导体的接触，就属于肖特基接触" class="headerlink" title="对于我们所研究的 $\rm Au&#x2F;TiO_2$ 体系，金属和n型半导体的接触，就属于肖特基接触"></a>对于我们所研究的 $\rm Au&#x2F;TiO_2$ 体系，金属和n型半导体的接触，就属于肖特基接触</h3><p>金属功函数大于n型半导体，即（$\phi_m &gt; \phi_s$）</p>
-<p>功函数定义为费米能级与真空能级之间的能量差，简单理解为“让电子逃离材料表面所需要的能量”，这里金属的功函数比半导体的大，那么电子会从半导体流向金属，直到两者达到平衡。<br><img src="/image-1.png" alt="alt text"><br>当金属和n型半导体接触时，半导体中的传导电子比金属中的传导电子具有更高的能量，因此接触界面附近的电子向金属移动。金属费米能级基本不变（载流子浓度高），半导体费米能级下降，直到两者之间的能量差消失。</p>
-<p><img src="/image.png" alt="alt text"><br>通过接触实现电子转移，半导体带正电，金属带负电，在界面处形成耗尽层，产生从半导体指向金属的电场。</p>
+<p>功函数定义为费米能级与真空能级之间的能量差，简单理解为“让电子逃离材料表面所需要的能量”，这里金属的功函数比半导体的大，那么电子会从半导体流向金属，直到两者达到平衡。<br><img src="/images/Band-bending1.png"><br>当金属和n型半导体接触时，半导体中的传导电子比金属中的传导电子具有更高的能量，因此接触界面附近的电子向金属移动。金属费米能级基本不变（载流子浓度高），半导体费米能级下降，直到两者之间的能量差消失。</p>
+<p><img src="/images/Band-bending2.png"><br>通过接触实现电子转移，半导体带正电，金属带负电，在界面处形成耗尽层，产生从半导体指向金属的电场。</p>
 <p>半导体的载流子密度远低于金属，电子运动产生的耗尽层向半导体侧扩展深度大。</p>
 <p>半导体中产生的耗尽层和电场充当能量势垒，因此接触面处的半导体能带向上弯曲。</p>
 <p>以这种方式产生的电位差称为“内建电压”。它在金属和半导体之间形成势垒，使得电流难以从金属流向半导体。这称为“肖特基接触”。</p>
+<h3 id="为什么会能带弯曲"><a href="#为什么会能带弯曲" class="headerlink" title="为什么会能带弯曲"></a>为什么会能带弯曲</h3><p>能带代表着电子能量的变化，顺着电势降低的方向也就是电场方向，其能带向上弯曲，电子运动困难，因而其对应的能量需要上升（吸收能量才能跃迁到更高处，这才对应电子运动困难的情况）</p>
 
       
     </div>
@@ -568,6 +569,59 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
