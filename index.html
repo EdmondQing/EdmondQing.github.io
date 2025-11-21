@@ -182,7 +182,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-11-20 09:22:31" itemprop="dateModified" datetime="2025-11-20T09:22:31+08:00">2025-11-20</time>
+                <time title="Modified: 2025-11-21 10:15:03" itemprop="dateModified" datetime="2025-11-21T10:15:03+08:00">2025-11-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -216,37 +216,31 @@
 <p>以这种方式产生的电位差称为“内建电压”。它在金属和半导体之间形成势垒，使得电流难以从金属流向半导体。这称为“肖特基接触”。</p>
 <h3 id="为什么会能带弯曲"><a href="#为什么会能带弯曲" class="headerlink" title="为什么会能带弯曲"></a>为什么会能带弯曲</h3><p>能带代表着电子能量的变化，顺着电势降低的方向也就是电场方向，其能带向上弯曲，电子运动困难，因而其对应的能量需要上升（吸收能量才能跃迁到更高处，这才对应电子运动困难的情况）</p>
 <p>为了避免大体系的DFT计算，我们打算用一个简单的模型来刻画这个band-bending。</p>
-<h1 id="经验公式"><a href="#经验公式" class="headerlink" title="经验公式"></a>经验公式</h1><h2 id="1-一维耗尽近似"><a href="#1-一维耗尽近似" class="headerlink" title="1.一维耗尽近似"></a>1.一维耗尽近似</h2><ul>
-<li>取界面在 $z&#x3D;0$，<strong>$z&gt;0$</strong> 指向 TiO₂ 体内。</li>
-<li><strong>一维耗尽近似（depletion approximation）</strong>：<ul>
+<h1 id="经验公式"><a href="#经验公式" class="headerlink" title="经验公式"></a>经验公式</h1><h2 id="一维耗尽近似"><a href="#一维耗尽近似" class="headerlink" title="一维耗尽近似"></a>一维耗尽近似</h2><ul>
+<li><p>考虑最简单的一维耗尽近似，取界面在 $z&#x3D;0$，<strong>$z&gt;0$</strong> 指向 TiO₂ 体内。</p>
+<ul>
 <li><strong>耗尽区</strong> $0\le z\le W$：几乎没有自由载流子，只剩下半导体边的正电荷</li>
 <li><strong>准中性体区</strong> $z&gt;W$：净电荷与电场为0，电势为常数。</li>
-</ul>
-</li>
-<li>参数与符号：<ul>
 <li>$\varepsilon_s&#x3D;\varepsilon_r\varepsilon_0$（半导体介电常数）、$N_D$（施主浓度）、$\psi(z)$（电势，V）。</li>
-<li>电子能量与电势关系：$\Delta E(z)&#x3D;-q,\psi(z)$。。</li>
+<li>$\Delta E(z)&#x3D;-q,\psi(z)$。</li>
 </ul>
 </li>
 </ul>
-<p>电荷密度：<br>$$<br>\rho(z)&#x3D;<br>\begin{cases}<br>+qN_D,&amp; 0\le z\le W,\<br>0,&amp; z&gt;W~.<br>\end{cases}<br>$$</p>
-<hr>
-<h2 id="2-泊松方程-→-电场与电势"><a href="#2-泊松方程-→-电场与电势" class="headerlink" title="2. 泊松方程 → 电场与电势"></a>2. 泊松方程 → 电场与电势</h2><p>一维泊松方程（耗尽区）：<br>$$<br>\frac{d^2\psi}{dz^2}&#x3D;-\frac{\rho}{\varepsilon_s}&#x3D;-\frac{qN_D}{\varepsilon_s}.<br>$$</p>
-<p>积分一次（取边界 $E(W)&#x3D;0$）得电场：<br>$$<br>E(z)&#x3D;-\frac{d\psi}{dz}&#x3D;\frac{qN_D}{\varepsilon_s}(W-z).<br>$$</p>
-<p>再积分并令 $\psi(W)&#x3D;0$（体区基准）得电势：<br>$$<br> \psi(z)&#x3D; -,\frac{qN_D}{2\varepsilon_s}(W-z)^2,\quad 0\le z\le W.<br>$$</p>
-<p>带边上移量：<br>$$<br> \Delta E(z)&#x3D;-q\psi(z)&#x3D;V_{\rm bi}\Big(1-\frac{z}{W}\Big)^2<br>$$</p>
-<hr>
-<h2 id="3-内建电势与耗尽宽度"><a href="#3-内建电势与耗尽宽度" class="headerlink" title="3. 内建电势与耗尽宽度"></a>3. 内建电势与耗尽宽度</h2><p>界面到体区的电势降：<br>$$<br>V_{\rm bi}&#x3D;\psi(W)-\psi(0)&#x3D;\frac{qN_DW^2}{2\varepsilon_s}.<br>$$</p>
+<p>耗尽区的电荷密度：<br>$$<br>\rho(z)&#x3D;<br>\begin{cases}<br>+qN_D,&amp; 0\le z\le W,\<br>0,&amp; z&gt;W~.<br>\end{cases}<br>$$</p>
+<p>耗尽区一维泊松方程：<br>$$<br>\frac{d^2\psi}{dz^2}&#x3D;-\frac{\rho}{\varepsilon_s}&#x3D;-\frac{qN_D}{\varepsilon_s}<br>$$<br>积分一次得到<br>$$<br>\psi^{\prime}(z)&#x3D;-\frac{d\psi}{dz} &#x3D; -\frac{q N_D}{\varepsilon_s}z+C_1<br>$$</p>
+<p>带入边界条件 $E(W)&#x3D;-\psi^{\prime}(W)&#x3D;0$，<br>$$<br>C_1 &#x3D; \frac{qN_D}{\varepsilon}W<br>$$<br>得电场：<br>$$<br>E(z)&#x3D;-\frac{d\psi}{dz}&#x3D;\frac{qN_D}{\varepsilon_s}(z-W).<br>$$</p>
+<p>再积分得到电势：<br>$$<br>\psi(z)&#x3D;-\frac{qN_D}{2\varepsilon_s}(z^2-2Wz)+C_2<br>$$<br>$$<br>\psi(z)&#x3D;-\frac{qN_D}{2\varepsilon_s}(z-W)^2+C_2<br>$$</p>
+<p>边界条件 $\psi(W)&#x3D;0$ 得$C_2&#x3D;0$电势：<br>$$<br> \psi(z)&#x3D; -,\frac{qN_D}{2\varepsilon_s}(z-W)^2,\quad 0\le z\le W.<br>$$</p>
+<p>界面到体区的电势降：<br>$$<br>V_{\rm bi}&#x3D;\psi(W)-\psi(0)&#x3D;\frac{qN_DW^2}{2\varepsilon_s}.<br>$$</p>
+<p>带边上移量（eV到V转换）：<br>$$<br> \Delta E(z)&#x3D;-q\psi(z)&#x3D;<br> V_{\rm bi}\Big(1-\frac{z}{W}\Big)^2<br>$$</p>
 <p>于是耗尽宽度：<br>$$<br> W&#x3D;\sqrt{\frac{2,\varepsilon_s,V_{\rm bi}}{q,N_D}}<br>$$</p>
-<hr>
-<h2 id="4-Schottky–Mott势垒"><a href="#4-Schottky–Mott势垒" class="headerlink" title="4. Schottky–Mott势垒"></a>4. Schottky–Mott势垒</h2><p><strong>(1) 理想电子势垒（Schottky–Mott）：</strong><br>$$<br> \Phi_{Bn}&#x3D;\Phi_M-\chi<br>$$<br>$\Phi_M$：金属功函数（Au），$\chi$：半导体电子亲和势，定义为导带底到真空能级的能量。</p>
-<p><strong>(2) 体区费米位置：</strong><br>$$<br> E_C-E_F \approx k_BT \ln\frac{N_C}{N_D}<br>$$<br>$N_C$：导带有效态密度；$N_D$：施主浓度。</p>
-<p><strong>(3) 合并得到内建电势：</strong><br>$$<br> V_{\rm bi}\approx\Phi_{Bn}-\frac{E_C-E_F}{q}<br>$$</p>
-<hr>
-<h2 id="5-带边弯折曲线"><a href="#5-带边弯折曲线" class="headerlink" title="5. 带边弯折曲线"></a>5. 带边弯折曲线</h2><p>取 $E_F$ 为能量零点（画图时 $E_F&#x3D;0$）：<br>$$<br>E_C^{\rm bulk}&#x3D;E_C-E_F,\qquad E_V^{\rm bulk}&#x3D;E_C^{\rm bulk}-E_g.<br>$$<br>空间分布（<strong>向界面上弯</strong>）：<br>$$ E_C(z)&#x3D;E_C^{\rm bulk}+\Delta E(z),\qquad<br>E_V(z)&#x3D;E_V^{\rm bulk}+\Delta E(z),\quad<br>\Delta E(z)&#x3D;V_{\rm bi}\Big(1-\frac{z}{W}\Big)^2<br>$$<br>$\Delta E(0)&#x3D;V_{\rm bi}$，$\Delta E(W)&#x3D;0$。</p>
+<p><strong>Schottky–Mott势垒：</strong><br>$$<br> \Phi_{Bn}&#x3D;\Phi_M-\chi<br>$$<br>其中$\Phi_M$就是金属的功函数（Au），$\chi$：半导体电子亲和势（$\rm TiO_2$），定义为导带底到真空能级的能量。</p>
+<p>接触后半导体边体区，也就是能带平了之后的区域有关系：<br>$$<br> E_C-E_F \approx k_BT \ln\frac{N_C}{N_D}<br>$$<br>其中$N_C$：导带有效态密度，$N_D$：施主浓度。<br>这个公式来自于教科书<a target="_blank" rel="noopener" href="https://ia601608.us.archive.org/5/items/PhysicsOfSemiconductorDevices_855/PhysicsOfSemiconductorDevices3rdEdition-S.M.SzeAndKwokK.Ng.pdf">Physics of Semiconductor Devices</a></p>
+<p>首先对于费米狄拉克分布：<br>$$<br>f(E)&#x3D; \frac{1}{1+e^{\frac{E-E_F}{k_BT}}}<br>$$<br>如果$E_c-E_F\geq3k_BT$，我们有非简并近似，也就是玻尔兹曼近似<br>$$<br>f(E)\approx e^{-\frac{E-E_F}{k_BT}}<br>$$<br>电子浓度：<br>$$<br>n &#x3D; \int_{E_c}^{\infty}g_c(E)f(E)dE<br>$$<br>其中<br>$$<br>g_c(E)&#x3D;\frac{1}{2\pi^2}\left(\frac{2m}{\hbar^2}\right)^{\frac{3}{2}} \sqrt{E-E_c}<br>$$<br>带入上式积分，并用玻尔兹曼近似，令 $x&#x3D;\frac{E-E_c}{k_BT}$可得：<br>$$<br>n &#x3D; e^{-(E_c-E_F)&#x2F;k_BT}\frac{1}{2\pi^2}\left(\frac{2m}{\hbar^2}\right)^{\frac{3}{2}}(k_BT)^{\frac{3}{2}}\int_0^\infty \sqrt x e^{-x}dx<br>$$<br>其中积分<br>$$<br>\int_0^\infty \sqrt x e^{-x}dx &#x3D; \frac{\sqrt\pi}{2}<br>$$<br>得到：<br>$$<br>n &#x3D; N_c e^{-\frac{E_c-E_F}{k_BT}}<br>$$<br>$$<br>N_c&#x3D;2\left(\frac{2\pi mk_BT}{h^2}\right)^{\frac{3}{2}}<br>$$<br>在半导体的中性区$n\approx N_D$,对上面 $n$ 取对数即可得<br>$$<br> E_C-E_F \approx k_BT \ln\frac{N_C}{N_D}<br>$$<br>如果不用玻尔兹曼近似的话，就得用费米积分<br>$$<br>n &#x3D; N_cF_{1&#x2F;2}(\eta),F_{1&#x2F;2}(\eta)&#x3D;\frac{2}{\pi}\int_0^\infty \frac{\sqrt{x}}{1+e^{x-\eta}}dx<br>$$<br>其中 $\eta&#x3D;\frac{E_F-E_c}{k_BT}$</p>
+<p>应用以上近似，我们可得内建电势：<br>$$<br> V_{\rm bi}\approx\Phi_{Bn}-\frac{E_C-E_F}{q}<br>$$</p>
+<p>取 $E_F$ 为能量零点：<br>$$<br>E_C^{\rm bulk}&#x3D;E_C-E_F,\qquad E_V^{\rm bulk}&#x3D;E_C^{\rm bulk}-E_g.<br>$$<br>空间分布曲线：</p>
 <p>$$<br>E_C(z)&#x3D;E_C^{\rm bulk}+V_{\rm bi}\Big(1-\frac{z}{W}\Big)^2<br>$$</p>
 <p>$$<br>E_V(z)&#x3D;E_V^{\rm bulk}+V_{\rm bi}\Big(1-\frac{z}{W}\Big)^2<br>$$</p>
-<hr>
 
       
     </div>
