@@ -30,8 +30,9 @@
 <meta property="og:image" content="http://example.com/images/Band-bending1.png">
 <meta property="og:image" content="http://example.com/images/Band-bending2.png">
 <meta property="og:image" content="http://example.com/images/Band-bending3.png">
+<meta property="og:image" content="http://example.com/images/Band-bending4.png">
 <meta property="article:published_time" content="2025-11-16T07:49:04.000Z">
-<meta property="article:modified_time" content="2025-11-21T05:36:04.817Z">
+<meta property="article:modified_time" content="2025-11-22T02:28:36.951Z">
 <meta property="article:author" content="Peiyao QIN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/Band-bending1.png">
@@ -190,7 +191,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-11-21 13:36:04" itemprop="dateModified" datetime="2025-11-21T13:36:04+08:00">2025-11-21</time>
+                <time title="Modified: 2025-11-22 10:28:36" itemprop="dateModified" datetime="2025-11-22T10:28:36+08:00">2025-11-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -216,32 +217,25 @@
         <h1 id="能带弯曲（Band-bending）"><a href="#能带弯曲（Band-bending）" class="headerlink" title="能带弯曲（Band bending）"></a>能带弯曲（Band bending）</h1><p>最近有一个实验的合作涉及到能带弯折，固体物理学的有点忘了，在知乎上学习了一下记一下笔记。 </p>
 <p>半导体能带在半导体和金属接触时，表面处发生弯曲，这种现象称为“能带弯曲”。</p>
 <p>其中有两种接触方式：<strong>肖特基接触</strong> 和 <strong>欧姆接触</strong></p>
-<h3 id="对于我们所研究的-rm-Au-TiO-2-体系，金属和n型半导体的接触，就属于肖特基接触"><a href="#对于我们所研究的-rm-Au-TiO-2-体系，金属和n型半导体的接触，就属于肖特基接触" class="headerlink" title="对于我们所研究的 $\rm Au&#x2F;TiO_2$ 体系，金属和n型半导体的接触，就属于肖特基接触"></a>对于我们所研究的 $\rm Au&#x2F;TiO_2$ 体系，金属和n型半导体的接触，就属于肖特基接触</h3><p>金属功函数大于n型半导体，即（$\phi_m &gt; \phi_s$）</p>
+<p><strong>对于我们所研究的 $\rm Au&#x2F;TiO_2$ 体系，金属和n型半导体的接触，就属于肖特基接触</strong><br>金属功函数大于n型半导体，即（$\phi_m &gt; \phi_s$）</p>
 <p>功函数定义为费米能级与真空能级之间的能量差，简单理解为“让电子逃离材料表面所需要的能量”，这里金属的功函数比半导体的大，那么电子会从半导体流向金属，直到两者达到平衡。<br><img src="/images/Band-bending1.png"><br>当金属和n型半导体接触时，半导体中的传导电子比金属中的传导电子具有更高的能量，因此接触界面附近的电子向金属移动。金属费米能级基本不变（载流子浓度高），半导体费米能级下降，直到两者之间的能量差消失。</p>
 <p><img src="/images/Band-bending2.png"><br>通过接触实现电子转移，半导体带正电，金属带负电，在界面处形成耗尽层，产生从半导体指向金属的电场。</p>
 <p>半导体的载流子密度远低于金属，电子运动产生的耗尽层向半导体侧扩展深度大。</p>
 <p>半导体中产生的耗尽层和电场充当能量势垒，因此接触面处的半导体能带向上弯曲。</p>
 <p>以这种方式产生的电位差称为“内建电压”。它在金属和半导体之间形成势垒，使得电流难以从金属流向半导体。这称为“肖特基接触”。</p>
-<h3 id="为什么会能带弯曲"><a href="#为什么会能带弯曲" class="headerlink" title="为什么会能带弯曲"></a>为什么会能带弯曲</h3><p>能带代表着电子能量的变化，顺着电势降低的方向也就是电场方向，其能带向上弯曲，电子运动困难，因而其对应的能量需要上升（吸收能量才能跃迁到更高处，这才对应电子运动困难的情况）</p>
+<h2 id="为什么会能带弯曲"><a href="#为什么会能带弯曲" class="headerlink" title="为什么会能带弯曲"></a>为什么会能带弯曲</h2><p>能带代表着电子能量的变化，顺着电势降低的方向也就是电场方向，其能带向上弯曲，电子运动困难，因而其对应的能量需要上升（吸收能量才能跃迁到更高处，这才对应电子运动困难的情况）</p>
 <p>为了避免大体系的DFT计算，我们打算用一个简单的模型来刻画这个band-bending。</p>
-<h1 id="经验公式"><a href="#经验公式" class="headerlink" title="经验公式"></a>经验公式</h1><h2 id="一维耗尽近似"><a href="#一维耗尽近似" class="headerlink" title="一维耗尽近似"></a>一维耗尽近似</h2><ul>
-<li><p>考虑最简单的一维耗尽近似，取界面在 $z&#x3D;0$，<strong>$z&gt;0$</strong> 指向 TiO₂ 体内。</p>
-<ul>
-<li><strong>耗尽区</strong> $0\le z\le W$：几乎没有自由载流子，只剩下半导体边的正电荷</li>
-<li><strong>准中性体区</strong> $z&gt;W$：净电荷与电场为0，电势为常数。</li>
-<li>$\varepsilon_s&#x3D;\varepsilon_r\varepsilon_0$（半导体介电常数）、$N_D$（施主浓度）、$\psi(z)$（电势，V）。</li>
-<li>$\Delta E(z)&#x3D;-q,\psi(z)$。</li>
-</ul>
-</li>
-</ul>
+<h2 id="一维耗尽近似"><a href="#一维耗尽近似" class="headerlink" title="一维耗尽近似"></a>一维耗尽近似</h2><blockquote>
+<p>考虑最简单的一维耗尽近似，<strong>假设耗尽区中自由电子全部进入金属中，只剩下正电荷，正电荷密度是$N_D$，而半导体的体区仍然是施主完全电离，$n\approx N_D$,正电荷密度也是$N_D$，是为中性区。</strong><br>取界面在 $z&#x3D;0$，<strong>$z&gt;0$</strong> 指向 TiO₂ 体内。<br>   <strong>耗尽区</strong> $0\le z\le W$：几乎没有自由载流子，只剩下半导体边的正电荷<br>   <strong>准中性体区</strong> $z&gt;W$：净电荷与电场为0，电势为常数（0）。（边界条件）<br>   $\varepsilon_s&#x3D;\varepsilon_r\varepsilon_0$（半导体介电常数）、$N_D$（施主浓度）<br>   $\Delta E(z)&#x3D;-q,\psi(z)$。</p>
+</blockquote>
 <p>耗尽区的电荷密度：<br>$$<br>\rho(z)&#x3D;<br>\begin{cases}<br>+qN_D,&amp; 0\le z\le W,\<br>0,&amp; z&gt;W~.<br>\end{cases}<br>$$</p>
 <p>耗尽区一维泊松方程：<br>$$<br>\frac{d^2\psi}{dz^2}&#x3D;-\frac{\rho}{\varepsilon_s}&#x3D;-\frac{qN_D}{\varepsilon_s}<br>$$<br>积分一次得到<br>$$<br>\psi^{\prime}(z)&#x3D;-\frac{d\psi}{dz} &#x3D; -\frac{q N_D}{\varepsilon_s}z+C_1<br>$$</p>
 <p>带入边界条件 $E(W)&#x3D;-\psi^{\prime}(W)&#x3D;0$，<br>$$<br>C_1 &#x3D; \frac{qN_D}{\varepsilon}W<br>$$<br>得电场：<br>$$<br>E(z)&#x3D;-\frac{d\psi}{dz}&#x3D;\frac{qN_D}{\varepsilon_s}(z-W).<br>$$</p>
 <p>再积分得到电势：<br>$$<br>\psi(z)&#x3D;-\frac{qN_D}{2\varepsilon_s}(z^2-2Wz)+C_2<br>$$<br>$$<br>\psi(z)&#x3D;-\frac{qN_D}{2\varepsilon_s}(z-W)^2+C_2<br>$$</p>
-<p>边界条件 $\psi(W)&#x3D;0$ 得$C_2&#x3D;0$电势：<br>$$<br> \psi(z)&#x3D; -,\frac{qN_D}{2\varepsilon_s}(z-W)^2,\quad 0\le z\le W.<br>$$</p>
+<p>边界条件 $\psi(W)&#x3D;0$ 得$C_2&#x3D;0$电势：<br>$$<br> \psi(z)&#x3D; -\frac{qN_D}{2\varepsilon_s}(z-W)^2,\quad 0\le z\le W.<br>$$</p>
 <p>界面到体区的电势降：<br>$$<br>V_{\rm bi}&#x3D;\psi(W)-\psi(0)&#x3D;\frac{qN_DW^2}{2\varepsilon_s}.<br>$$</p>
 <p>带边上移量（eV到V转换）：<br>$$<br> \Delta E(z)&#x3D;-q\psi(z)&#x3D;<br> V_{\rm bi}\Big(1-\frac{z}{W}\Big)^2<br>$$</p>
-<p>于是耗尽宽度：<br>$$<br> W&#x3D;\sqrt{\frac{2,\varepsilon_s,V_{\rm bi}}{q,N_D}}<br>$$</p>
+<p>于是耗尽宽度：<br>$$<br> W&#x3D;\sqrt{\frac{2\varepsilon_s V_{\rm bi}}{q N_D}}<br>$$</p>
 <p><strong>Schottky–Mott势垒：</strong><br>$$<br> \Phi_{Bn}&#x3D;\Phi_M-\chi<br>$$<br>其中$\Phi_M$就是金属的功函数（Au），$\chi$：半导体电子亲和势（$\rm TiO_2$），定义为导带底到真空能级的能量。</p>
 <p>接触后半导体边体区，也就是能带平了之后的区域有关系：<br>$$<br> E_C-E_F \approx k_BT \ln\frac{N_C}{N_D}<br>$$<br>其中$N_C$：导带有效态密度，$N_D$：施主浓度。<br>这个公式来自于教科书<a target="_blank" rel="noopener" href="https://ia601608.us.archive.org/5/items/PhysicsOfSemiconductorDevices_855/PhysicsOfSemiconductorDevices3rdEdition-S.M.SzeAndKwokK.Ng.pdf">Physics of Semiconductor Devices</a></p>
 <p>首先对于费米狄拉克分布：<br>$$<br>f(E)&#x3D; \frac{1}{1+e^{\frac{E-E_F}{k_BT}}}<br>$$<br>如果$E_c-E_F\geq3k_BT$，我们有非简并近似，也就是玻尔兹曼近似<br>$$<br>f(E)\approx e^{-\frac{E-E_F}{k_BT}}<br>$$<br>电子浓度：<br>$$<br>n &#x3D; \int_{E_c}^{\infty}g_c(E)f(E)dE<br>$$<br>其中<br>$$<br>g_c(E)&#x3D;\frac{1}{2\pi^2}\left(\frac{2m}{\hbar^2}\right)^{\frac{3}{2}} \sqrt{E-E_c}<br>$$<br>带入上式积分，并用玻尔兹曼近似，令 $x&#x3D;\frac{E-E_c}{k_BT}$可得：<br>$$<br>n &#x3D; e^{-(E_c-E_F)&#x2F;k_BT}\frac{1}{2\pi^2}\left(\frac{2m}{\hbar^2}\right)^{\frac{3}{2}}(k_BT)^{\frac{3}{2}}\int_0^\infty \sqrt x e^{-x}dx<br>$$<br>其中积分<br>$$<br>\int_0^\infty \sqrt x e^{-x}dx &#x3D; \frac{\sqrt\pi}{2}<br>$$<br>得到：<br>$$<br>n &#x3D; N_c e^{-\frac{E_c-E_F}{k_BT}}<br>$$<br>$$<br>N_c&#x3D;2\left(\frac{2\pi mk_BT}{h^2}\right)^{\frac{3}{2}}<br>$$<br>在半导体的中性区$n\approx N_D$,对上面 $n$ 取对数即可得<br>$$<br> E_C-E_F \approx k_BT \ln\frac{N_C}{N_D}<br>$$<br>如果不用玻尔兹曼近似的话，就得用费米积分<br>$$<br>n &#x3D; N_cF_{1&#x2F;2}(\eta),F_{1&#x2F;2}(\eta)&#x3D;\frac{2}{\pi}\int_0^\infty \frac{\sqrt{x}}{1+e^{x-\eta}}dx<br>$$<br>其中 $\eta&#x3D;\frac{E_F-E_c}{k_BT}$</p>
@@ -249,7 +243,8 @@
 <p>取 $E_F$ 为能量零点：<br>$$<br>E_C^{\rm bulk}&#x3D;E_C-E_F,\qquad E_V^{\rm bulk}&#x3D;E_C^{\rm bulk}-E_g.<br>$$<br>空间分布曲线：</p>
 <p>$$<br>E_C(z)&#x3D;E_C^{\rm bulk}+V_{\rm bi}\Big(1-\frac{z}{W}\Big)^2<br>$$</p>
 <p>$$<br>E_V(z)&#x3D;E_V^{\rm bulk}+V_{\rm bi}\Big(1-\frac{z}{W}\Big)^2<br>$$</p>
-<p>于是我们就可以得到能带弯曲曲线<br><img src="/images/Band-bending3.png"><br>参数设置为：<br>$N_c$:1e21<br>$N_D$:1e19<br>$\phi_m$:5.10 eV<br>$\chi$: 4eV<br>$E_g$：3.20<br>$\varepsilon_r$: 31<br>T:设置为300K</p>
+<p>于是就可以得到能带弯曲曲线<br><img src="/images/Band-bending3.png"><br>参数设置为：<br>$N_c$:1e21 这个参数只跟具体材料有关，从公式我们能看出只跟有效质量有关，如果温度一定的话。<br>$N_D$:1e19 这个就是参杂浓度<br>$\phi_m$:5.10 eV  金属的功函数，金大概在4.8-5.4eV之间，取决于表面的干净程度<br>$\chi$: 4eV  $\rm TiO_2$的亲合能，导带底到真空能级的位置<br>$E_g$：3.20eV $\rm TiO_2$的band gap<br>$\varepsilon_r$: 31 $\rm TiO_2$的介电常数<br>T:设置为300K</p>
+<h2 id="Hot-carrier"><a href="#Hot-carrier" class="headerlink" title="Hot carrier"></a>Hot carrier</h2><p>现在我们考虑Au的hot carrier，激光打在Au上，激发等离子体，等离子体衰减，能量传给电子，产生远高于晶格温度的的电子，所以叫”hot carrier”，之前我们做了一个简单的模型来考虑这样的热电子，也就是算出Au的DOS，然后乘上2000K的费米狄拉克分布，理论上2000K对于Au的化学势会有十几个meV的修正，但在这里不重要，如图所示。<br><img src="/images/Band-bending4.png"></p>
 
     </div>
 
@@ -327,7 +322,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%BD%E5%B8%A6%E5%BC%AF%E6%9B%B2%EF%BC%88Band-bending%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">能带弯曲（Band bending）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E4%BA%8E%E6%88%91%E4%BB%AC%E6%89%80%E7%A0%94%E7%A9%B6%E7%9A%84-rm-Au-TiO-2-%E4%BD%93%E7%B3%BB%EF%BC%8C%E9%87%91%E5%B1%9E%E5%92%8Cn%E5%9E%8B%E5%8D%8A%E5%AF%BC%E4%BD%93%E7%9A%84%E6%8E%A5%E8%A7%A6%EF%BC%8C%E5%B0%B1%E5%B1%9E%E4%BA%8E%E8%82%96%E7%89%B9%E5%9F%BA%E6%8E%A5%E8%A7%A6"><span class="nav-number">1.1.</span> <span class="nav-text">对于我们所研究的 $\rm Au&#x2F;TiO_2$ 体系，金属和n型半导体的接触，就属于肖特基接触</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E8%83%BD%E5%B8%A6%E5%BC%AF%E6%9B%B2"><span class="nav-number">1.2.</span> <span class="nav-text">为什么会能带弯曲</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%8F%E9%AA%8C%E5%85%AC%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">经验公式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E8%80%97%E5%B0%BD%E8%BF%91%E4%BC%BC"><span class="nav-number">2.1.</span> <span class="nav-text">一维耗尽近似</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%BD%E5%B8%A6%E5%BC%AF%E6%9B%B2%EF%BC%88Band-bending%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">能带弯曲（Band bending）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E8%83%BD%E5%B8%A6%E5%BC%AF%E6%9B%B2"><span class="nav-number">1.1.</span> <span class="nav-text">为什么会能带弯曲</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E8%80%97%E5%B0%BD%E8%BF%91%E4%BC%BC"><span class="nav-number">1.2.</span> <span class="nav-text">一维耗尽近似</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hot-carrier"><span class="nav-number">1.3.</span> <span class="nav-text">Hot carrier</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
