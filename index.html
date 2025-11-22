@@ -182,7 +182,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-11-22 16:26:32" itemprop="dateModified" datetime="2025-11-22T16:26:32+08:00">2025-11-22</time>
+                <time title="Modified: 2025-11-22 16:33:11" itemprop="dateModified" datetime="2025-11-22T16:33:11+08:00">2025-11-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -218,7 +218,7 @@
 <p>以这种方式产生的电位差称为“内建电压”。它在金属和半导体之间形成势垒，使得电流难以从金属流向半导体。这称为“肖特基接触”。</p>
 <h2 id="为什么会能带弯曲"><a href="#为什么会能带弯曲" class="headerlink" title="为什么会能带弯曲"></a>为什么会能带弯曲</h2><p>能带代表着电子能量的变化，顺着电势降低的方向也就是电场方向，其能带向上弯曲，电子运动困难，因而其对应的能量需要上升（吸收能量才能跃迁到更高处，这才对应电子运动困难的情况）</p>
 <blockquote>
-<p>至于老师问的为什么这两种接触都是n型半导体或者p型半导体而不是本征半导体：<br>首先，本征半导体中的载流子浓度跟n型半导体载流子浓度不在一个量级上，很难产生上述所说的，半导体中的电子流入金属这一过程，自然不会产生电势降，也就不会有能带弯折，本征半导体跟金属的接触就相当于金属绝缘体接触。 其次，为什么是n型半导体，n型半导体费米能级靠近导带，p型靠近价带，取决于掺杂浓度，n型高掺杂时费米能级甚至会超过导带。而对于本征半导体，也就是纯净无掺杂的，理论上T&#x3D;0K的时候费米能级就在价带和导带的中间。</p>
+<p>至于老师问的为什么这两种接触都是n型半导体或者p型半导体而不是本征半导体：<br>首先，本征半导体中的载流子浓度跟n型半导体载流子浓度不在一个量级上，很难产生上述所说的，半导体中的电子流入金属这一过程，自然不会产生电势降，也就不会有能带弯折，本征半导体跟金属的接触就相当于金属绝缘体接触。 其次，为什么是n型半导体，n型半导体费米能级靠近导带，majority carriers是电子；p型靠近价带，取决于掺杂浓度，n型高掺杂时费米能级甚至会超过导带。而对于本征半导体，也就是纯净无掺杂的，理论上T&#x3D;0K的时候费米能级就在价带和导带的中间。</p>
 </blockquote>
 <p>为了避免大体系的DFT计算，我们打算用一个简单的模型来刻画这个band-bending。</p>
 <h2 id="一维耗尽近似"><a href="#一维耗尽近似" class="headerlink" title="一维耗尽近似"></a>一维耗尽近似</h2><blockquote>
@@ -243,7 +243,7 @@
 <h2 id="Hot-carrier"><a href="#Hot-carrier" class="headerlink" title="Hot carrier"></a>Hot carrier</h2><p>现在我们考虑Au的hot carrier，激光打在Au上，激发等离子体，等离子体衰减，能量传给电子，产生远高于晶格温度的的电子，所以叫”hot carrier”，之前我们做了一个简单的模型来考虑这样的热电子，也就是算出Au的DOS，然后乘上2000K的费米狄拉克分布，理论上2000K对于Au的化学势会有十几个meV的修正，但在这里不重要，如图所示。<br><img src="/images/Band-bending4.png"></p>
 <p>上面我们已经分析了正常的平衡态的金属半导体接触，半导体中的电子流入金属中去，产生耗尽区，形成肖特基势垒，进而能带弯折。现在将热电子考虑进去，简单来想，Au的的高能电子会有一部分跨过这个势垒，回到半导体体带，中和一部分耗尽区的正电荷，削减耗尽区的宽度，能带弯折程度减弱，</p>
 <p>如何将金属边的图像和半导体边的物理图像拼起来？</p>
-<p><a target="_blank" rel="noopener" href="https://ia601608.us.archive.org/5/items/PhysicsOfSemiconductorDevices_855/PhysicsOfSemiconductorDevices3rdEdition-S.M.SzeAndKwokK.Ng.pdf">Physics of Semiconductor Devices</a> 中提到，热发射（Thermionic-Emission）电流密度：<br>$$<br>J_{S\to M} \sim A^{<em>} T_s^{2}<br>\exp\left[-\frac{q(\Phi_{B_n} - V)}{k_B T_s}\right]<br>$$<br>这里V是外加偏置电场，A是常数<br>$$<br>J_{M\to S} \sim A^{</em>} T_e^{2}<br>\exp\left(-\frac{q \Phi_{B_n}}{k_B T_e}\right)<br>$$<br>净电流就是两者之差，在这里我们标记了Ts是半导体侧的晶格温度，Te是金属热电子温度，在不考虑外加偏置电场的时候，且两者温度一致的时候，显然静电流为0，两者相等。但现在考虑hot carrier，金属一侧的电子温度高于半导体一侧，就产生电流，电子流向半导体，与耗尽区正电荷中和之后动态平衡，然后静电流又为0，这时候我们可以看作产生了一个正向偏置电压，最后平衡的时候两个电流相等。这时可以解出：<br>$$<br>V_{hot}&#x3D; \frac{2 k_B T_s}{q} \ln\frac{T_e}{T_s}+ \Phi_{B_n} \left(1 - \frac{T_s}{T_e}\right)<br>$$</p>
+<p><a target="_blank" rel="noopener" href="https://ia601608.us.archive.org/5/items/PhysicsOfSemiconductorDevices_855/PhysicsOfSemiconductorDevices3rdEdition-S.M.SzeAndKwokK.Ng.pdf">Physics of Semiconductor Devices</a> 中提到，热发射（Thermionic-Emission）电流密度：<br>$$<br>J_{S\to M} \sim A^{<em>} T_s^{2} \exp\left[-\frac{q(\Phi_{B_n} - V)}{k_B T_s}\right]<br>$$<br>这里V是外加偏置电场，A是常数<br>$$<br>J_{M\to S} \sim A^{</em>} T_e^{2} \exp\left(-\frac{q \Phi_{B_n}}{k_B T_e}\right)<br>$$<br>净电流就是两者之差，在这里我们标记了Ts是半导体侧的晶格温度，Te是金属热电子温度，在不考虑外加偏置电场的时候，且两者温度一致的时候，显然静电流为0，两者相等。但现在考虑hot carrier，金属一侧的电子温度高于半导体一侧，就产生电流，电子流向半导体，与耗尽区正电荷中和之后动态平衡，然后静电流又为0，这时候我们可以看作产生了一个正向偏置电压，最后平衡的时候两个电流相等。这时可以解出：<br>$$<br>V_{hot}&#x3D; \frac{2 k_B T_s}{q} \ln\frac{T_e}{T_s}+ \Phi_{B_n} \left(1 - \frac{T_s}{T_e}\right)<br>$$</p>
 <p>这一电势相当于修改我们前面的内建电场$V_{bi}$<br>$$<br>V_{eff} &#x3D; V_{bi} - V_{hot}<br>$$<br>耗尽区的宽度变为：<br>$$<br> W&#x3D;\sqrt{\frac{2\varepsilon_s (V_{\rm bi}-V_{hot})}{q N_D}}<br>$$<br>变窄,如图所示。<br><img src="/images/Band-bending5.png"></p>
 
       
